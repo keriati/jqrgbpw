@@ -1,35 +1,97 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-GB"> 
+<html>
 <head>
-<title>JavaScript RGB Password</title> 
-<meta name="description" content="Generates a Simple RGB pattern based on the password input." /> 
-<meta name="keywords" content="password, javascript, rgb" /> 
-<!-- CSS -->
-<link href="css/main.css" type="text/css" rel="stylesheet" />
-<!-- Javascript -->
-<script src="js/rgb_password.js"></script>
+    <title>jQuery RGB Password</title>
+
+    <meta name="description" content="Generates a Simple RGB pattern based on the password input."/>
+    <meta name="keywords" content="password, javascript, rgb, jQuery"/>
+
+    <style type="text/css">
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background: #f3f3f3;
+        }
+
+        #container {
+            width: 600px;
+            margin: auto;
+        }
+
+        form > div {
+            margin: 15px 0;
+            float: left;
+            clear: both;
+        }
+
+        #password {
+            float: left;
+        }
+
+        .colorbox {
+            float: left;
+            margin: 2px 5px 0 0;
+        }
+
+        .colorbox div {
+            float: left; margin: 0 2px;
+            width: 6px;
+            height: 6px;
+        }
+
+        button {
+            float: left;
+            clear: both;
+        }
+
+    </style>
+
 </head>
 <body>
 
 <div id="container">
 
-	<h1>JavaScript RGB Password</h1>
-	
-	<input id="password" name="password" type="password" placeholder="Enter password" autofocus />
-	
-	<div id="password_hash">
-	
-		<div id="one"></div>
-		<div id="two"></div>
-		<div id="three"></div>
-	
-	</div>
-	
-	<div style="clear:both"></div>
-	
-	<p>Made by <a href="http://twitter.com/jamesrwhite">@jamesrwhite</a> and <a href="http://twitter.com/skattyadz">@skattyadz</a></p>
-	
+    <h1>JavaScript RGB Password</h1>
+
+    <form action="#">
+        <div>
+            <label for="username">Name</label> <br />
+            <input id="username" type="text" placeholder="Enter Name">
+        </div>
+        <div>
+            <label for="password">Password</label><br />
+            <input id="password" name="password" type="password" placeholder="Enter Password" autofocus/><div class="colorbox"></div>
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <h2>Usage</h2>
+
+    <pre>
+        $('#password').rgbpassword({
+            salts: [ 2462, 3637, 7432],
+            colorBoxContainer: '.colorbox',
+            saturation: 0.5,
+            lightness: 0.5
+        });
+    </pre>
+
 </div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.rgbpwd.js"></script>
+<script type="text/javascript">
+    (function() {
+        $('#password').rgbpassword({
+            salts: [ 2462, 3637, 7432],
+            colorBoxContainer: '.colorbox',
+            saturation: 0.5,
+            lightness: 0.5
+        });
+    })();
+</script>
 
 </body>
 </html>

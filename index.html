@@ -17,22 +17,43 @@
             margin: auto;
         }
 
+        h1 {
+            text-align: center;
+        }
+
         form > div {
-            margin: 15px 0;
+            width: 222px;
+            margin: auto;
+        }
+
+        #password {
+            float: left;
         }
 
         .colorbox {
-            display: inline-block;
-            position: relative;
-            top: -8px;
+            float: left;
+            margin-left: 5px;
         }
 
         .colorbox div {
             display: inline-block;
-            margin: 0 2px;
+            border: 1px solid #999;
+            margin: 0 3px;
             width: 7px;
-            height: 7px;
+            height: 28px;
+            background-color: white;
         }
+
+        input {
+            padding: 4px;
+            height: 20px;
+            width: 160px;
+            border: 1px solid #999;
+        }
+
+        .clearfix:before, .clearfix:after { content: ""; display: table; }
+        .clearfix:after { clear: both; }
+        .clearfix { *zoom: 1; }
 
     </style>
 
@@ -41,35 +62,36 @@
 
 <div id="container">
 
-    <h1>JavaScript RGB Password</h1>
+    <h1>jQuery RGB Password Plugin</h1>
 
     <form action="#">
-        <div>
-            <label for="username">Name</label> <br />
-            <input id="username" type="text" placeholder="Enter Name">
-        </div>
-        <div>
-            <label for="password">Password</label><br />
+
+        <div class="clearfix">
             <input id="password" name="password" type="password" placeholder="Enter Password" autofocus/>
             <div class="colorbox"></div>
         </div>
 
-        <div>
-            <button type="submit">Submit</button>
-        </div>
     </form>
+
+    <p>
+        Generates a simple RGB pattern based on the password input. The idea is that the input is recognisable by the user so
+        that they understand their password to be entered correctly before submitting.
+    </p>
 
     <h2>Usage</h2>
 
     <pre>
         $('#password').rgbpassword({
-            salts: [ 2462, 3637, 7432],
-            colorBoxContainer: '.colorbox',
-            saturation: 0.5,
-            lightness: 0.5,
-            minLength: 4
+            salts             : [ 2462, 3637, 7432],
+            colorBoxContainer : '.colorbox',
+            saturation        : 0.5,
+            lightness         : 0.5,
+            minLength         : 4
         });
     </pre>
+
+    <h2>GitHub</h2>
+    <a href="https://github.com/keriati/jqrgbpw">https://github.com/keriati/jqrgbpw</a>
 
 </div>
 
@@ -80,7 +102,7 @@
         $('#password').rgbpassword({
             salts: [ 2462, 3637, 7432],
             colorBoxContainer: '.colorbox',
-            saturation: 0.5,
+            saturation: 0.65,
             lightness: 0.5,
             minLength: 4
         });

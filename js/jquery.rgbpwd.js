@@ -1,6 +1,8 @@
 /*!
+ * RGB Password
+ * @author: James White
  *
- * RGB Password jQuery Plugin
+ * jQuery RGB Password Plugin
  * @author: Attila Kerekes
  * @date: 2012.03.10.
  *
@@ -31,7 +33,6 @@ if ( typeof Object.create !== 'function' ) {
             ];
 
             self.bindEvent();
-            self.adjustColor('');
         },
 
         bindEvent: function() {
@@ -50,7 +51,7 @@ if ( typeof Object.create !== 'function' ) {
                     hue  = this.jenkins_hash(value, salt)/salt,
                     color;
 
-                color = (value.length < this.options.minLength)
+                color = (value.length <= this.options.minLength)
                     ? color = this.hslToRgb(0, 0, hue)
                     : color = this.hslToRgb(hue, this.options.saturation, this.options.lightness);
 

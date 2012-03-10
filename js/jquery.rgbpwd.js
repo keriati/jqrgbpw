@@ -50,7 +50,7 @@ if ( typeof Object.create !== 'function' ) {
                     hue  = this.jenkins_hash(value, salt)/salt,
                     color;
 
-                color = (value.length < 4)
+                color = (value.length < this.options.minLength)
                     ? color = this.hslToRgb(0, 0, hue)
                     : color = this.hslToRgb(hue, this.options.saturation, this.options.lightness);
 
@@ -124,7 +124,8 @@ if ( typeof Object.create !== 'function' ) {
         salts: [ 2462, 3637, 7432],
         colorBoxContainer: '.colorbox',
         saturation: 0.5,
-        lightness: 0.5
+        lightness: 0.5,
+        minLength: 4
     };
 
 })(jQuery, window, document);

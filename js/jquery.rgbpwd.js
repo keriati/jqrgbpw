@@ -1,13 +1,15 @@
 /*!
- * RGB Password
- * @author: James White
+ * jQuery RGB Password Plugin v1.0.0
+ * http://github.com/keriati/jqrgbpw
  *
- * jQuery RGB Password Plugin
- * @author: Attila Kerekes
- * @date: 2012.03.10.
+ * Copyright 2012, Attila Kerekes
+ * Licensed under the MIT license.
  *
+ * Includes Javascript RGB Password
+ * Copyright 2012, Adam Howard
+ * http://skatty.me
+ * Released under the MIT License.
  */
-
 if ( typeof Object.create !== 'function' ) {
     Object.create = function( obj ) {
         function F() {}

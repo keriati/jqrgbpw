@@ -1,20 +1,51 @@
 # jQuery RGB Password Plugin
-
 Generates a simple RGB pattern based on the password input. The idea is that the input is recognisable by the user so
 that they understand their password to be entered correctly before submitting.
 
-## jQuery Plugin Demo
+## Usage
+### HTML
+Place this where you want the colors to apear:
 
+    <div class="colorbox"></div>
+
+When you run the script, three boxes will be appended to it, the result will be:
+
+    <div class="colorbox">
+        <div class="color1"></div>
+        <div class="color1"></div>
+        <div class="color1"></div>
+    </div>
+
+### CSS
+Add some basic styles:
+
+    .colorbox > div {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        margin: 0 5px;
+    }
+
+### Javascript
+Use it like any other jQuery plugin:
+
+    $('input#password').rgbpassword({
+        salts: [ 2462, 3637, 7432],         // Salt for color
+        colorBoxContainer: '.colorbox',     // The container of the colors
+        saturation: 0.65,                   // Set the saturaion
+        lightness: 0.5,                     // Set the lightness
+        minLength: 4                        // Minimum password length
+    });
+
+## Demo
 http://keriati.github.com/jqrgbpw/
 
 ## License
-
 Copyright 2012, Attila Kerekes
 https://github.com/keriati/jqrgbpw
 Licensed under the MIT license.
 
 ### Includes JavaScript RGB Password
-
 Copyright 2012, Adam Howard
 http://skatty.me
 

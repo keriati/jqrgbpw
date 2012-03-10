@@ -1,9 +1,8 @@
 /*!
  * jQuery RGB Password Plugin v1.0.0
  * http://github.com/keriati/jqrgbpw
- *
  * Copyright 2012, Attila Kerekes
- * Licensed under the MIT license.
+ * Released under the MIT license.
  *
  * Includes Javascript RGB Password
  * Copyright 2012, Adam Howard
@@ -53,7 +52,7 @@ if ( typeof Object.create !== 'function' ) {
                     hue  = this.jenkins_hash(value, salt)/salt,
                     color;
 
-                color = (value.length <= this.options.minLength)
+                color = (value.length < this.options.minLength)
                     ? color = this.hslToRgb(0, 0, hue)
                     : color = this.hslToRgb(hue, this.options.saturation, this.options.lightness);
 

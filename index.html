@@ -13,7 +13,8 @@
         }
 
         #container {
-            width: 600px;
+            width: 760px;
+            padding: 20px;
             margin: auto;
         }
 
@@ -51,6 +52,12 @@
             border: 1px solid #999;
         }
 
+        pre {
+            padding: 20px 0 0;
+            border: 1px solid #999;
+            background-color: white;
+        }
+
         .clearfix:before, .clearfix:after { content: ""; display: table; }
         .clearfix:after { clear: both; }
         .clearfix { *zoom: 1; }
@@ -78,20 +85,94 @@
         that they understand their password to be entered correctly before submitting.
     </p>
 
+    <p>
+        Download at <a href="https://github.com/keriati/jqrgbpw">GitHub</a>!
+    </p>
+
     <h2>Usage</h2>
 
+    <h3>HTML</h3>
+
+    <p>Place this where you want the colors to apear:</p>
+
     <pre>
-        $('#password').rgbpassword({
-            salts             : [ 2462, 3637, 7432],
-            colorBoxContainer : '.colorbox',
-            saturation        : 0.5,
-            lightness         : 0.5,
-            minLength         : 4
-        });
+    &lt;div class="colorbox"&gt;&lt;/div&gt;
     </pre>
 
-    <h2>GitHub</h2>
-    <a href="https://github.com/keriati/jqrgbpw">https://github.com/keriati/jqrgbpw</a>
+    <p>When you run the script, three boxes will be appended to it, the result will be:</p>
+
+    <pre>
+    &lt;div class="colorbox"&gt;
+        &lt;div class="color1"&gt;&lt;/div&gt;
+        &lt;div class="color1"&gt;&lt;/div&gt;
+        &lt;div class="color1"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    </pre>
+
+    <h3>CSS</h3>
+
+    <p>Add some basic styles:</p>
+
+    <pre>
+    .colorbox > div {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        margin: 0 5px;
+    }
+    </pre>
+
+    <h3>Javascript</h3>
+
+    <p>Use it like any other jQuery plugin:</p>
+
+    <pre>
+    $('input#password').rgbpassword({
+        salts: [ 2462, 3637, 7432],         // Salt for color
+        colorBoxContainer: '.colorbox',     // The container of the colors
+        saturation: 0.65,                   // Set the saturaion
+        lightness: 0.5,                     // Set the lightness
+        minLength: 4                        // Minimum password length
+    });
+    </pre>
+
+    <h2>License</h2>
+
+    <p>
+        Copyright 2012, Attila Kerekes<br />
+        <a href="https://github.com/keriati/jqrgbpw">https://github.com/keriati/jqrgbpw</a><br />
+        Licensed under the MIT license.<br />
+    </p>
+
+    <h3>Includes JavaScript RGB Password</h3>
+
+    <p>
+        Copyright 2012, Adam Howard <br />
+        <a href="http://skatty.me">http://skatty.me</a>
+    </p>
+
+    <p>
+        (The MIT License)
+    </p>
+
+    <p>
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+        documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the
+        rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
+        persons to whom the Software is furnished to do so, subject to the following conditions:
+    </p>
+
+    <p>
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+        Software.
+    </p>
+
+    <p>
+        THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+        WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+        COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+        OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    </p>
 
 </div>
 

@@ -3,8 +3,9 @@
 <head>
     <title>jQuery RGB Password</title>
 
-    <meta name="description" content="Generates a Simple RGB pattern based on the password input."/>
-    <meta name="keywords" content="password, javascript, rgb, jQuery"/>
+    <meta charset="utf-8" />
+    <meta name="description" content="Generates a Simple RGB pattern based on the password input." />
+    <meta name="keywords" content="password, javascript, rgb, jQuery" />
 
     <style type="text/css">
         body {
@@ -132,7 +133,9 @@
         colorBoxContainer: '.colorbox',     // The container of the colors
         saturation: 0.65,                   // Set the saturaion
         lightness: 0.5,                     // Set the lightness
-        minLength: 4                        // Minimum password length
+        minLength: 4,                       // Minimum password length
+        colorTimeout: 1000                  // Timeout for color update
+                                            // Set to 0 for instant
     });
     </pre>
 
@@ -183,9 +186,10 @@
         $('#password').rgbpassword({
             salts: [ 2462, 3637, 7432],
             colorBoxContainer: '.colorbox',
-            saturation: 0.65,
+            saturation: 0.9,
             lightness: 0.5,
-            minLength: 4
+            minLength: 4,
+            colorTimeout: 0
         });
     })();
 </script>

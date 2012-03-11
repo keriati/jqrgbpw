@@ -2,6 +2,9 @@
 Generates a simple RGB pattern based on the password input. The idea is that the input is recognisable by the user so
 that they understand their password to be entered correctly before submitting.
 
+## Demo
+http://keriati.github.com/jqrgbpw/
+
 ## Usage
 ### HTML
 Place this where you want the colors to apear:
@@ -34,19 +37,18 @@ Use it like any other jQuery plugin:
         colorBoxContainer: '.colorbox',     // The container of the colors
         saturation: 0.65,                   // Set the saturaion
         lightness: 0.5,                     // Set the lightness
-        minLength: 4                        // Minimum password length
+        minLength: 4,                       // Minimum password length
+        colorTimeout: 1000                  // Timeout for color update
+                                            // Set to 0 for instant
     });
 
-## Demo
-http://keriati.github.com/jqrgbpw/
-
 ## License
-Copyright 2012, Attila Kerekes
-https://github.com/keriati/jqrgbpw
+Copyright 2012, Attila Kerekes  
+https://github.com/keriati/jqrgbpw  
 Licensed under the MIT license.
 
 ### Includes JavaScript RGB Password
-Copyright 2012, Adam Howard
+Copyright 2012, Adam Howard  
 http://skatty.me
 
 (The MIT License)

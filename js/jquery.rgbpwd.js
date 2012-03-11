@@ -24,6 +24,7 @@ if ( typeof Object.create !== 'function' ) {
             var self = this;
             self.elem = elem;
             self.$elem = $( elem );
+            self.colorTimer = null;
 
             self.options = $.extend( {}, $.fn.rgbpassword.options, options );
 
@@ -40,7 +41,12 @@ if ( typeof Object.create !== 'function' ) {
             var self = this;
 
             self.$elem.on('keyup', function() {
-                self.adjustColor(self.elem.value);
+                if (self.options.colorTimeout > 0) {
+                    clearTimeout(self.colorTimer);
+                    self.colorTimer = setTimeout(function() {self.adjustColor(self.elem.value);}, self.options.colorTimeout);
+                } else {
+                    self.adjustColor(self.elem.value);
+                }
             });
         },
 
@@ -127,7 +133,8 @@ if ( typeof Object.create !== 'function' ) {
         colorBoxContainer: '.colorbox',
         saturation: 0.5,
         lightness: 0.5,
-        minLength: 4
+        minLength: 4,
+        colorTimeout: 800
     };
 
 })(jQuery, window, document);
